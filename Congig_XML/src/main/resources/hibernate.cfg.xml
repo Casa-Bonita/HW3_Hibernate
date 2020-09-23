@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/2_Base_Config_XML</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+<!--        <property name="hbm2ddl.auto">update</property>-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <mapping class="realisation.One_To_One.Passport"/>
+        <mapping class="realisation.One_To_One.Person"/>
+        <mapping class="realisation.One_To_Many.Master"/>
+        <mapping class="realisation.One_To_Many.Slave"/>
+        <mapping class="realisation.Many_To_Many.Dealer"/>
+        <mapping class="realisation.Many_To_Many.Auto"/>
+
+    </session-factory>
+</hibernate-configuration>
